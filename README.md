@@ -1,10 +1,22 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-8d59dc4de5201274e310e4c54b9627a8934c3b88527886e3b421487c677d23eb.svg)](https://classroom.github.com/a/1o1kSoBw)
+
+
+<table align="center">
+  <tr>
+    <th>Entire assignment is repost from my other profile</th>
+  </tr>
+</table>
+
+
 # B-VSA LS 22/23 - Semestrálny projekt 1
 
 ![Java 1.8](https://img.shields.io/badge/Java-1.8-red)
 ![EclipseLink 2.7.11](https://img.shields.io/badge/EclipseLink-2.7.11-blue)
 ![PostgreSQL Driver](https://img.shields.io/badge/PostgreSQL-42.5.4-green)
 [![Public domain](https://img.shields.io/badge/License-Unlicense-lightgray)](https://unlicense.org)
+
+
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-8d59dc4de5201274e310e4c54b9627a8934c3b88527886e3b421487c677d23eb.svg)](https://classroom.github.com/a/1o1kSoBw)
+
 
 Cieľom 1. semestrálneho projektu je implementovať jednoduchú aplikácie pre správu záverečných prác
 v rámci štúdia na vysokej škole využívajúc technológiu JPA s pripojením na SQL databázu. Aplikácia musí poskytovať
