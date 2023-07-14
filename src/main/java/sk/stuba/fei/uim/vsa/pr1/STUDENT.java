@@ -19,37 +19,42 @@ import lombok.Data;
  */
 @Entity
 @Data
-@NamedQueries({
+@NamedQueries(
+  {
     @NamedQuery(name = "STUDENT.findAll", query = "SELECT s FROM STUDENT s"),
-    @NamedQuery(name = "STUDENT.findByAisId", query = "SELECT s FROM STUDENT s WHERE s.aisId = :aisId")
-})
+    @NamedQuery(
+      name = "STUDENT.findByAisId",
+      query = "SELECT s FROM STUDENT s WHERE s.aisId = :aisId"
+    ),
+  }
+)
 public class STUDENT implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, unique = true)
-    private Long aisId;
+  private static final long serialVersionUID = 1L;
 
-    //@Column(nullable = false)
-    private String meno;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(nullable = false, unique = true)
+  private Long aisId;
 
-    @Column(unique = true)
-    private String email;
+  //@Column(nullable = false)
+  private String meno;
 
-    //@Column(nullable = false)
-    private int rocnik;
+  @Column(unique = true)
+  private String email;
 
-    //@Column(nullable = false)
-    private int semester;
+  //@Column(nullable = false)
+  private int rocnik;
 
-    //@Column(nullable = false)
-    private String program;
+  //@Column(nullable = false)
+  private int semester;
 
-    //@OneToOne(mappedBy = "vypracovatel")
+  //@Column(nullable = false)
+  private String program;
 
-    @OneToOne(optional = true)
-    @JoinColumn(unique = true, nullable = true)
-    private ZAVERECNAPRACA zaverecnaPraca;
+  //@OneToOne(mappedBy = "vypracovatel")
 
+  @OneToOne(optional = true)
+  @JoinColumn(unique = true, nullable = true)
+  private ZAVERECNAPRACA zaverecnaPraca;
 }

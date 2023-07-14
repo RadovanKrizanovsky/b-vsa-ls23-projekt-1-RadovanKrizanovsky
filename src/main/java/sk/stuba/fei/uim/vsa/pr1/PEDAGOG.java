@@ -18,35 +18,40 @@ import lombok.Data;
 
 @Entity
 @Data
-@NamedQueries({
+@NamedQueries(
+  {
     @NamedQuery(name = "PEDAGOG.findAll", query = "SELECT p FROM PEDAGOG p"),
-    @NamedQuery(name = "PEDAGOG.findByAisId", query = "SELECT p FROM PEDAGOG p WHERE p.aisId = :aisId")
-})
+    @NamedQuery(
+      name = "PEDAGOG.findByAisId",
+      query = "SELECT p FROM PEDAGOG p WHERE p.aisId = :aisId"
+    ),
+  }
+)
 public class PEDAGOG implements Serializable {
-    
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, unique = true)
-    private Long aisId;
 
-    //@Column(nullable = false)
-    private String meno;
+  private static final long serialVersionUID = 1L;
 
-    @Column(unique = true)
-    private String email;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(nullable = false, unique = true)
+  private Long aisId;
 
-    //@ManyToOne(optional = false)
-    //@JoinColumn(name = "institut_id")
-    private String institut;
+  //@Column(nullable = false)
+  private String meno;
 
-    //@ManyToOne(optional = false)
-    //@JoinColumn(name = "oddelenie_id")
-    private String oddelenie;
+  @Column(unique = true)
+  private String email;
 
-    @OneToMany(mappedBy = "veduciPrace", orphanRemoval = true)
-    @Column(nullable = true)
-    @Basic(optional = true)
-    private List<ZAVERECNAPRACA> vypisanePrace;
+  //@ManyToOne(optional = false)
+  //@JoinColumn(name = "institut_id")
+  private String institut;
 
+  //@ManyToOne(optional = false)
+  //@JoinColumn(name = "oddelenie_id")
+  private String oddelenie;
+
+  @OneToMany(mappedBy = "veduciPrace", orphanRemoval = true)
+  @Column(nullable = true)
+  @Basic(optional = true)
+  private List<ZAVERECNAPRACA> vypisanePrace;
 }

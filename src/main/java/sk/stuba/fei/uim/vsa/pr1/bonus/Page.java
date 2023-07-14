@@ -9,15 +9,13 @@ import java.util.List;
  * Implementácia musí obsahovať prázdny konštruktor.
  */
 public interface Page<R> {
+  List<R> getContent();
 
-    List<R> getContent();
+  Pageable getPageable();
 
-    Pageable getPageable();
+  Long getTotalElements();
 
-    Long getTotalElements();
+  void setTotalElements(Long totalElements);
 
-    void setTotalElements(Long totalElements);
-
-    int getTotalPages();
-
+  int getTotalPages();
 }

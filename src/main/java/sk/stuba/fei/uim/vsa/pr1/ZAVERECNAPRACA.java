@@ -23,50 +23,49 @@ import lombok.Data;
 @Data
 public class ZAVERECNAPRACA implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Basic(optional = false)
-    @Column(nullable = false, unique = true)
-    private Long id;
+  private static final long serialVersionUID = 1L;
 
-    @Basic(optional = false)
-    @Column(nullable = false, unique = true)
-    private String registacneCislo;
-    
-    @PrePersist
-    public void onPrePersist() {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Basic(optional = false)
+  @Column(nullable = false, unique = true)
+  private Long id;
+
+  @Basic(optional = false)
+  @Column(nullable = false, unique = true)
+  private String registacneCislo;
+
+  @PrePersist
+  public void onPrePersist() {
     this.registacneCislo = "FEI-" + UUID.randomUUID().toString();
-    }
-    
-    private String nazov;
-    private String popis;
-    private String pracovisko;
-    
-    @ManyToOne
-    @JoinColumn(name = "veduci_id")
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private PEDAGOG veduciPrace;
-    
-    @OneToOne(optional = true)
-    @JoinColumn(unique = true, nullable = true)
-    private STUDENT vypracovatel;
-    
-    private LocalDate datumZverejnenia;
-    
-    private LocalDate deadlineOdovzdania;
-    
-    @Enumerated(EnumType.STRING)
-    private Typ typ;
-    
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    @Basic(optional = false)
-    private Status status;
-    
-    /*
+  }
+
+  private String nazov;
+  private String popis;
+  private String pracovisko;
+
+  @ManyToOne
+  @JoinColumn(name = "veduci_id")
+  @Basic(optional = false)
+  @Column(nullable = false)
+  private PEDAGOG veduciPrace;
+
+  @OneToOne(optional = true)
+  @JoinColumn(unique = true, nullable = true)
+  private STUDENT vypracovatel;
+
+  private LocalDate datumZverejnenia;
+
+  private LocalDate deadlineOdovzdania;
+
+  @Enumerated(EnumType.STRING)
+  private Typ typ;
+
+  @Enumerated(EnumType.STRING)
+  @Column(nullable = false)
+  @Basic(optional = false)
+  private Status status;
+  /*
     ADD
     
       public void addZaverecnaPraca(ZaverecnaPraca zaverecnaPraca) {
